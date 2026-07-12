@@ -13,6 +13,8 @@ import SignupForm from '@/components/auth/SignupForm'
 import Dashboard from '@/components/dashboard/Dashboard'
 import DashboardLayout from '@/components/layout/DashboardLayout'
 
+import OrganizationSetup from '@/components/admin/OrganizationSetup';
+
 
 
 // 1. Move Navbar inside the LandingPage so it ONLY shows here
@@ -58,8 +60,17 @@ export default function App() {
                 </ProtectedRoute>
               } 
             />
-            {/* Future routes will go here, e.g.: */}
-            {/* <Route path="/organization" element={<ProtectedRoute><DashboardLayout><OrganizationSetup /></DashboardLayout></ProtectedRoute>} /> */}
+            <Route 
+                path="/organization" 
+                element={
+                  <ProtectedRoute>
+                    <DashboardLayout>
+                      <OrganizationSetup />
+                    </DashboardLayout>
+                  </ProtectedRoute>
+                } 
+            />
+           
           </Routes>
         </div>
       </Router>

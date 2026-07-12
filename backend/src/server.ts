@@ -3,7 +3,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import { testDBConnection } from './config/db';
 import authRoutes from './routes/authRoutes';
-import dashboardRoutes from './routes/dashboardRoutes'; // <-- 1. Add this import
+import dashboardRoutes from './routes/dashboardRoutes'; //
+// Add this import at the top
+import adminRoutes from './routes/adminRoutes';
+
+
 
 // Load environment variables from .env
 dotenv.config();
@@ -24,7 +28,10 @@ app.use(express.json());
 
 // API Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/dashboard', dashboardRoutes); // <-- 2. Add this line
+app.use('/api/dashboard', dashboardRoutes); 
+
+
+app.use('/api/admin', adminRoutes);
 
 // Basic Health Check Route
 app.get('/', (req: Request, res: Response) => {
