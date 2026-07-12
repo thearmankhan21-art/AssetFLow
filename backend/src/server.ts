@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { testDBConnection } from './config/db';
+import authRoutes from './routes/authRoutes';
 
 // Load environment variables from .env
 dotenv.config();
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 5000;
 // Global Middlewares
 app.use(cors());
 app.use(express.json()); // Parses incoming JSON requests
+app.use('/api/auth', authRoutes);
 
 // Basic Health Check Route
 app.get('/', (req: Request, res: Response) => {
