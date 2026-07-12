@@ -43,7 +43,7 @@ export default function LoginForm() {
   return (
     <div className="max-w-md w-full mx-auto p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-        Login to AssetFlow
+        Login
       </h2>
 
       {error && (
